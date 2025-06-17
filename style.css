@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#container{
+    width: 500px;
+    margin: 0 auto;
+    border: 10px solid #909090;
+    border-radius: 15px;
+    background-color: beige;
+    padding: 10px;
+}
+
+#tasks li{
+margin-left: 20%;
+text-align: left;
+}
+.checked{
+    text-decoration: line-through;
+    color: gray;
+}
