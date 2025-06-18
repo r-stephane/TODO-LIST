@@ -25,6 +25,7 @@ const addtask = () => {
     //console.log(checkbox)
     checkbox.addEventListener("click", () => {
         span1.classList.toggle("checked");
+        counter();
     })
 
     editBtn.addEventListener("click", function () {
@@ -34,5 +35,13 @@ const addtask = () => {
             checkbox.checked = false
             span1.classList.remove("checked");
         }
+        counter();
     })
 }
+const counter = () => {
+    let completedTasks = document.querySelectorAll(".checked").length;
+    let compteur = document.getElementById("completedcompteur");
+    compteur.innerText = completedTasks;
+}
+
+counter();
