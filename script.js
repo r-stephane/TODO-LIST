@@ -20,7 +20,8 @@ const addtask = () => {
     const checkbox = li.querySelector("input");
     let span1 = li.querySelector("span");
     const editBtn = li.querySelector(".editBtn");
-    console.log(span1.textContent);
+    const deleteBtn = li.querySelector(".deleteBtn");
+    console.log(deleteBtn);
 
     //console.log(checkbox)
     checkbox.addEventListener("click", () => {
@@ -37,7 +38,23 @@ const addtask = () => {
         }
         counter();
     })
+
+    deleteBtn.addEventListener("click", function () {
+    if (confirm('voulez vous supprimer cette tache?')) {
+        li.remove();
+    }
+})
 }
+
+const deleteall = document.getElementById("deleteall");
+deleteall.addEventListener("click", function () {
+    if (confirm('etes vous sur de vouloir effacer toutes les taches?')) {
+        tasks.innerHTML = "";
+        counter();
+    }
+})
+
+
 const counter = () => {
     let completedTasks = document.querySelectorAll(".checked").length;
     let compteur = document.getElementById("completedcompteur");
@@ -45,3 +62,10 @@ const counter = () => {
 }
 
 counter();
+
+const uncounter = () => {
+    let elementsSansChecked = document.querySelectorAll(' li:not(.checked)');
+    let uncompteur = document.querySelector("li > label > span");
+    uncompteur.innerText = elementsSansChecked;
+    console.log(uncompteur);
+}
